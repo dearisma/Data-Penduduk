@@ -9,7 +9,10 @@
 					<div class="col-md">
 						<a href="<?= base_url('index.php/Kabupaten/tambah/') ?>" style="float: left;" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span>Tambah Data Kabupaten</a><br><br><br>
 					</div>
-                    
+                    <div class="col-md">
+                    <a href="<?= base_url('index.php/Kabupaten/print/') ?>" style="float: left;" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span>Print</a><br><br><br>
+					
+                    </div>
                     <div class="card shadow mb-4">
 						
                         <div class="card-header py-3">
@@ -21,7 +24,7 @@
                             
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <form action="<?= base_url('index.php/Kabupaten/index/') ?>"  method="get">
+                                    <form action="<?= base_url('index.php/Kabupaten/print/') ?>"  method="get">
                                         <input type="text" name="keyword" placeholder="search">
                                         <input type="submit" name="search_submit">
                                     </form>

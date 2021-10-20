@@ -60,6 +60,16 @@ class Provinsi extends CI_Controller
 		$this->load->view('template/header');
 		$this->load->view('Edit_prov');
 	}
+	public function print()
+	{
+		
+		$data['data_prov'] = $this->pm->get('peminjam')->result();
+		$mpdf = new \Mpdf\Mpdf();
+		$html = $this->load->view('print', $data, TRUE);
+		$mpdf->WriteHTML($html);
+		// $mpdf->Output();
+		$mpdf->Output('Laporan provinsi.pdf', 'D');
+	}
 }
 
 /* End of file Peminjaman.php */

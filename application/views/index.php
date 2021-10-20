@@ -8,7 +8,13 @@
                     <!-- DataTales Example -->
 					<div class="col-md">
 						<a href="<?= base_url('index.php/Provinsi/tambah/') ?>" style="float: left;" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span>Tambah Data Provinsi</a><br><br><br>
-					</div>
+					
+                    </div>
+                    <div class="col-md">
+                    <a href="<?= base_url('index.php/Provinsi/print/') ?>" style="float: left;" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span>Print</a><br><br><br>
+					
+                    </div>
+                    
                     <div class="card shadow mb-4">
 						
                         <div class="card-header py-3">

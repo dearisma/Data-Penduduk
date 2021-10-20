@@ -53,6 +53,27 @@ class Kabupaten extends CI_Controller
 		$this->km->del('kabupaten', $w);
 		redirect('index.php/Kabupaten','refresh');
     }
+	public function print()
+	{
+		
+		error_reporting(0);
+		$cari = $_GET['keyword'];
+		if ($cari != null) {
+			$data['data_kab'] = $this->km->search($cari)->result();
+			
+		}else{
+			$w = array ('kabupaten.id_provinsi');
+			$data['data_kab'] = $this->km->getDataId('kabupaten', $w)->result();
+		}
+		$data['data_prov'] = $this->km->getData('provinsi')->result();
+		
+		$mpdf = new \Mpdf\Mpdf();
+			$html = $this->load->view('print_kab', $data, TRUE);
+			$mpdf->WriteHTML($html);
+			// $mpdf->Output();
+			$mpdf->Output('Laporan Data Kabupaten.pdf', 'D');
+	
+	}
 
 }
 
